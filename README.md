@@ -2,6 +2,8 @@
 
 ![Captura34](https://user-images.githubusercontent.com/62777613/211676190-05cd8688-11be-4eba-9e39-3c2209b53a95.PNG)
 
+![Captura35](https://user-images.githubusercontent.com/62777613/211858104-3341b52a-12ec-4b5d-9e75-834b8c11c1fb.PNG)
+
 
 A new Flutter project.
 
