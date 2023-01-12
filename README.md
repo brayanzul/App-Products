@@ -2,7 +2,11 @@
 
 ![Captura34](https://user-images.githubusercontent.com/62777613/211676190-05cd8688-11be-4eba-9e39-3c2209b53a95.PNG)
 
-![Captura35](https://user-images.githubusercontent.com/62777613/211858104-3341b52a-12ec-4b5d-9e75-834b8c11c1fb.PNG)
+![Captura35](https://user-images.githubusercontent.com/62777613/212190705-447c30b5-c4ed-4415-be0e-06c8338d1ce0.PNG)
+
+![Captura![Captura36](https://user-images.githubusercontent.com/62777613/212190519-12fa1a4a-9b76-45c2-b428-a0d99e6d7e0b.PNG)
+
+![Captura37](https://user-images.githubusercontent.com/62777613/212190610-a3237621-b4db-403e-8a62-a9d6a14c9d36.PNG)
 
 
 A new Flutter project.
