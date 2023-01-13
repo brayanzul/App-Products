@@ -111,15 +111,6 @@ class _LoginForm extends StatelessWidget {
               disabledColor: Colors.grey,
               elevation: 0,
               color: Colors.black,
-              child: Container(
-                padding: const EdgeInsets.symmetric( horizontal: 80, vertical: 15 ),
-                child: Text(
-                  loginForm.isLoading
-                   ? 'Espere'
-                   : 'Ingresar',
-                  style: const TextStyle( color: Colors.white ),
-                ),
-              ),
               onPressed: loginForm.isLoading ? null : () async {
                 //TODO: Login form
 
@@ -135,7 +126,16 @@ class _LoginForm extends StatelessWidget {
                 loginForm.isLoading = false;
 
                 Navigator.pushReplacementNamed(context, 'home');
-              }
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric( horizontal: 80, vertical: 15 ),
+                child: Text(
+                  loginForm.isLoading
+                   ? 'Espere'
+                   : 'Ingresar',
+                  style: const TextStyle( color: Colors.white ),
+                ),
+              )
             )
 
           ],
