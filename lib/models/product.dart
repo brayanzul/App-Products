@@ -2,6 +2,7 @@
 //
 //     final product = productFromJson(jsonString);
 
+import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class Product {
@@ -16,6 +17,7 @@ class Product {
     String name;
     String? picture;
     double price;
+    String? id;
 
     factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
 
@@ -34,4 +36,6 @@ class Product {
         "picture": picture,
         "price": price,
     };
+
+  static fromMap(value) {}
 }
