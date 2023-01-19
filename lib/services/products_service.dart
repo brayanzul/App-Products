@@ -6,16 +6,19 @@ import 'package:http/http.dart' as http;
 
 class ProductsService extends ChangeNotifier {
 
-  final String _baseUrl = 'https://flutter-varios-b7784-default-rtdb.firebaseio.com';
+  final String _baseUrl = 'flutter-varios-b7784-default-rtdb.firebaseio.com';
   final List<Product> products = [];
   bool isLoading = true;
 
   ProductsService() {
-    this.loadProducts();
+    loadProducts();
   }
 
   // TODO: <List<Product>>
   Future loadProducts() async {
+
+    this.isLoading = true;
+    notifyListeners();
 
     final url = Uri.https( _baseUrl, 'products.json' );
     final resp = await http.get(url);
@@ -23,12 +26,15 @@ class ProductsService extends ChangeNotifier {
     final Map<String, dynamic> productsMap = json.decode( resp.body );
 
     productsMap.forEach((key, value) {
-      final tempProduct = Product.fromMap( value );
+      final Product tempProduct = Product.fromJson( value );
       tempProduct.id = key;
-      this.products.add( tempProduct );
+      products.add( tempProduct );
     });
 
-    print( this.products[0].name );
+    this.isLoading = false;
+    notifyListeners();
+
+    return this.products;
 
   }
 
