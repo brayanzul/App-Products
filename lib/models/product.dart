@@ -11,6 +11,7 @@ class Product {
         required this.name,
         this.picture,
         required this.price,
+        this.id
     });
 
     bool available;
@@ -21,7 +22,7 @@ class Product {
 
     factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
 
-    String toRawJson() => json.encode(toJson());
+    String toJson() => json.encode(toJson());
 
     factory Product.fromJson(Map<String, dynamic> json) => Product(
         available: json["available"],
@@ -30,12 +31,11 @@ class Product {
         price: json["price"].toDouble(),
     );
 
-    Map<String, dynamic> toJson() => {
+    Map<String, dynamic> toMap() => {
         "available": available,
         "name": name,
         "picture": picture,
         "price": price,
     };
-
-  static fromMap(value) {}
+    
 }

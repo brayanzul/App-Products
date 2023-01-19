@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:productos_app/models/models.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+
+  final Product product;
+
+  const ProductCard({
+    super.key, 
+    required this.product
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +21,27 @@ class ProductCard extends StatelessWidget {
         decoration: _cardBorders(),
         child: Stack(
           alignment: Alignment.bottomLeft,
-          children: const [
+          children: [
 
-            _BackgroundImage(),
+            _BackgroundImage(product.picture),
 
-            _ProductDetails(),
+            _ProductDetails(
+              title: product.name,
+              subTitle: product.id!,
+            ),
 
-            Positioned(
+            const Positioned(
               top: 0,
               right: 0,
               child: _PriceTag()
             ),
 
-            // TODO: Mostrar de manera condicional
-            Positioned(
-              top: 0,
-              left: 0,
-              child: _NotAvailable()
-            )
+            if(!product.available)
+              const Positioned(
+               top: 0,
+               left: 0,
+               child: _NotAvailable()
+              )
 
           ]
         ),
@@ -110,9 +120,14 @@ class _PriceTag extends StatelessWidget {
 }
 
 class _ProductDetails extends StatelessWidget {
+
+  final String title;
+  final String subTitle;
+
   const _ProductDetails({
-    Key? key,
-  }) : super(key: key);
+    required this.title, 
+    required this.subTitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -149,9 +164,12 @@ class _ProductDetails extends StatelessWidget {
 }
 
 class _BackgroundImage extends StatelessWidget {
-  const _BackgroundImage({
-    Key? key,
-  }) : super(key: key);
+
+  final String? url;
+
+  const _BackgroundImage(String? picture, {
+    this.url,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -160,9 +178,9 @@ class _BackgroundImage extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 400,
-        child: const FadeInImage(
-          placeholder: AssetImage('assets/jar-loading.gif'),
-          image: NetworkImage('https://via.placeholder.com/400x300/f6f6f6'),
+        child: FadeInImage(
+          placeholder: const AssetImage('assets/jar-loading.gif'),
+          image: NetworkImage(url!),
           fit: BoxFit.cover,
         ),
       ),
