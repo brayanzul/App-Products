@@ -12,6 +12,9 @@
 
 ![Captura40](https://user-images.githubusercontent.com/62777613/212745195-517cfc10-bd1f-43ba-a461-961ea6670d81.PNG)
 
+![Captura41](https://user-images.githubusercontent.com/62777613/213701239-d98793e0-bfac-43e4-8ab9-fa7a9b51dfa8.PNG)
+
+![Captura42](https://user-images.githubusercontent.com/62777613/213701057-a2b647c3-f48c-4031-8172-85ab54c37f73.PNG)
 
 A new Flutter project.
 
