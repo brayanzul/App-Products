@@ -4,7 +4,7 @@
 
 ![Captura35](https://user-images.githubusercontent.com/62777613/212190705-447c30b5-c4ed-4415-be0e-06c8338d1ce0.PNG)
 
-![Captura![Captura36](https://user-images.githubusercontent.com/62777613/212190519-12fa1a4a-9b76-45c2-b428-a0d99e6d7e0b.PNG)
+![Captura36](https://user-images.githubusercontent.com/62777613/212190519-12fa1a4a-9b76-45c2-b428-a0d99e6d7e0b.PNG)
 
 ![Captura37](https://user-images.githubusercontent.com/62777613/212190610-a3237621-b4db-403e-8a62-a9d6a14c9d36.PNG)
 
@@ -15,6 +15,8 @@
 ![Captura41](https://user-images.githubusercontent.com/62777613/213701239-d98793e0-bfac-43e4-8ab9-fa7a9b51dfa8.PNG)
 
 ![Captura42](https://user-images.githubusercontent.com/62777613/213701057-a2b647c3-f48c-4031-8172-85ab54c37f73.PNG)
+
+![Captura43](https://user-images.githubusercontent.com/62777613/213873170-7919ffee-611c-435e-90d4-3125eaa0e612.PNG)
 
 A new Flutter project.
 
