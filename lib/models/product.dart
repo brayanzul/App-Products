@@ -22,7 +22,7 @@ class Product {
 
     factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
 
-    String toJson() => json.encode(toJson());
+    String toJson() => json.encode(toMap());
 
     factory Product.fromJson(Map<String, dynamic> json) => Product(
         available: json["available"],
