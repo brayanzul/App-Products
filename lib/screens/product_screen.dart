@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'package:image_picker/image_picker.dart';
+
 import 'package:productos_app/providers/product_form_provider.dart';
 import 'package:productos_app/services/services.dart';
 import 'package:productos_app/ui/input_decorations.dart';
@@ -56,8 +59,23 @@ class _ProductScreenBody extends StatelessWidget {
                   right: 20,
                   child: IconButton(
                     icon: const Icon( Icons.camera_alt_outlined, size: 40, color: Colors.black), 
-                    onPressed: () {
-                      // TODO: Camara o galeria
+                    onPressed: () async {
+                      
+                      final picker = new ImagePicker();
+                      final PickedFile? pickedFile = await picker.getImage(
+                        //source: ImageSource.gallery,
+                        source: ImageSource.camera,
+                        imageQuality: 100
+                      );
+
+                      if( pickedFile == null ) {
+                        print('No selecciono nada');
+                        return;
+                      }
+
+                      print('Tenemos imagen ${ pickedFile.path }');
+                      productService.UpdateSelectedProductImage(pickedFile.path);
+
                     }
                   ),
                 ),
@@ -78,6 +96,10 @@ class _ProductScreenBody extends StatelessWidget {
         onPressed: () async {
           
           if(!productForm.isValidForm()) return;
+
+          final String? imageUrl = await productService.uploadImage();
+
+          if( imageUrl != null ) productForm.product.picture = imageUrl;
 
           await productService.saveOrCreateProduct(productForm.product);
         },
