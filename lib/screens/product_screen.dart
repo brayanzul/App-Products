@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -92,8 +94,12 @@ class _ProductScreenBody extends StatelessWidget {
 
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
-        child: const Icon( Icons.save_outlined),
-        onPressed: () async {
+        child: productService.isSaving
+         ? const CircularProgressIndicator( color: Colors.white )
+         : const Icon( Icons.save_outlined),
+        onPressed: productService.isSaving
+         ? null
+         : () async {
           
           if(!productForm.isValidForm()) return;
 
