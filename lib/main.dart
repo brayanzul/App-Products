@@ -31,10 +31,13 @@ class MyApp extends StatelessWidget {
       title: 'Productos App',
       initialRoute: 'login',
       routes: {
-        'login'   : ( _ ) => LoginScreen(),
-        'register': ( _ ) => RegisterScreen(),
+        'Checking' : ( _ ) => CheckAuthScreen(),
+
         'home'    : ( _ ) => HomeScreen(),
-        'product' : ( _ ) => ProductScreen()
+        'login'   : ( _ ) => LoginScreen(),
+        
+        'product' : ( _ ) => ProductScreen(),
+        'register': ( _ ) => RegisterScreen(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.grey[300],
