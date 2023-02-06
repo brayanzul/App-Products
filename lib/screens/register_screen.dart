@@ -122,7 +122,6 @@ class _LoginForm extends StatelessWidget {
               color: Colors.black,
               onPressed: loginForm.isLoading ? null : () async {
 
-
                 FocusScope.of(context).unfocus();
                 final authService = Provider.of<AuthService>( context, listen: false);
 
